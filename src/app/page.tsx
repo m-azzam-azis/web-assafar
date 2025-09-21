@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
@@ -7,6 +8,7 @@ import KeunggulanSection from "@/components/sections/KeunggulanSection";
 import PaketGallerySection from "@/components/sections/PaketGallerySection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
 import MitraSection from "@/components/sections/MitraSection";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Home() {
   return (
@@ -22,7 +24,7 @@ export default function Home() {
       <TestimonialSection />
       <MitraSection />
 
-      {/* <FloatingWhatsApp /> */}
+      <FloatingWhatsApp />
     </div>
   );
 }

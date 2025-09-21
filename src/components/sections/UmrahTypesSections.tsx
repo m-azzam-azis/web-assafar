@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 // Umrah Types Section Component
 const UmrahTypesSection = () => {
   const types = [
@@ -25,23 +26,44 @@ const UmrahTypesSection = () => {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.h2
             className="text-4xl md:text-5xl font-bold text-black mb-6"
             style={{ fontFamily: "Playfair Display, serif" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             Pilihan Paket Umroh
-          </h2>
-          <p className="text-xl text-gray-600">
+          </motion.h2>
+          <motion.p
+            className="text-xl text-gray-60"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             Temukan paket yang sesuai dengan kebutuhan dan budget Anda
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {types.map((type, index) => (
-            <div
+            <motion.div
               key={index}
               className="relative h-96 rounded-2xl overflow-hidden group cursor-pointer transform hover:scale-105 transition-all duration-300 shadow-lg"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.05 }}
             >
               <img
                 src={type.image}
@@ -51,16 +73,28 @@ const UmrahTypesSection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 text-white">
-                  <h3
+                  <motion.h3
                     className="text-2xl font-bold mb-2"
                     style={{ fontFamily: "Playfair Display, serif" }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
                   >
                     {type.title}
-                  </h3>
-                  <p className="text-white/90">{type.subtitle}</p>
+                  </motion.h3>
+                  <motion.p
+                    className="text-white/90"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                  >
+                    {type.subtitle}
+                  </motion.p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
