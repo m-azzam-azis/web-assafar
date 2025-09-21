@@ -33,7 +33,7 @@ const HeroSection = () => {
           }}
           initial={{ scale: 1 }}
           animate={{
-            scale: index === currentImage ? 1.05 : 1,
+            scale: index === currentImage ? 1.1 : 1,
           }}
           transition={{ duration: 5, ease: "easeOut" }}
         />
@@ -68,13 +68,12 @@ const HeroSection = () => {
               Wujudkan impian spiritual Anda bersama kami. Layanan terpercaya
               dengan pengalaman lebih dari 10 tahun.
             </motion.p>
+            {/* // Option 1: Use only Framer Motion (recommended) */}
             <motion.button
-              className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="bg-yellow-500 text-black px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-yellow-600 transition-colors duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
             >
               Konsultasi Sekarang
             </motion.button>

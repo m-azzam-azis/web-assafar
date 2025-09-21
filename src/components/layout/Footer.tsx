@@ -1,30 +1,43 @@
 import React from "react";
-import { Phone, MapPin, Mail, Clock } from "lucide-react";
+import { MapPin, Instagram, Clock } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
+
+import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-black text-white py-16">
+    <footer id="contact" className="bg-black text-white py-16 rounded-t-[4rem]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <div
-              className="text-3xl font-bold mb-4"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
-              <span className="text-yellow-500">As</span>safar
-            </div>
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              className="mb-4"
+              height={100}
+              width={100}
+            />
             <p className="text-gray-300 mb-6 leading-relaxed">
               Mewujudkan impian spiritual Anda untuk beribadah di tanah suci
               dengan pelayanan terbaik dan terpercaya. Pengalaman lebih dari 10
               tahun melayani jamaah umroh dan haji.
             </p>
             <div className="flex space-x-4">
-              <div className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center">
-                <Phone className="w-5 h-5 text-black" />
-              </div>
-              <div className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center">
-                <Mail className="w-5 h-5 text-black" />
-              </div>
+              <Link
+                href={"https://wa.me/62123456789"}
+                target="_blank"
+                className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center"
+              >
+                <FaWhatsapp className="w-5 h-5 text-black" />
+              </Link>
+              <Link
+                href={"https://www.instagram.com/assafarimanamanah/"}
+                target="_blank"
+                className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center"
+              >
+                <Instagram className="w-5 h-5 text-black" />
+              </Link>
             </div>
           </div>
 
@@ -37,36 +50,36 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               <li>
-                <a
+                <Link
                   href="#"
                   className="text-gray-300 hover:text-yellow-500 transition-colors"
                 >
                   Umroh VIP
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="text-gray-300 hover:text-yellow-500 transition-colors"
                 >
                   Umroh Reguler
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="text-gray-300 hover:text-yellow-500 transition-colors"
                 >
                   Umroh Tahapan
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="text-gray-300 hover:text-yellow-500 transition-colors"
                 >
                   Haji
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -88,11 +101,11 @@ const Footer = () => {
                 </p>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-yellow-500 flex-shrink-0" />
+                <FaWhatsapp className="w-5 h-5 text-yellow-500 flex-shrink-0" />
                 <p className="text-gray-300">+62 21 1234 5678</p>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-yellow-500 flex-shrink-0" />
+                <Instagram className="w-5 h-5 text-yellow-500 flex-shrink-0" />
                 <p className="text-gray-300">info@assafar.com</p>
               </div>
               <div className="flex items-center space-x-3">
@@ -105,8 +118,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 Assafar Travel. All rights reserved. | Designed with ❤️ for
-            your spiritual journey
+            © 2024 Assafar Travel. All rights reserved.
           </p>
         </div>
       </div>

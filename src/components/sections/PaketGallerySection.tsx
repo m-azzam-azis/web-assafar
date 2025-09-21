@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { X } from "lucide-react";
+import Image from "next/image";
 
 const PaketGallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -45,9 +46,11 @@ const PaketGallerySection = () => {
               }}
               aria-label={`Lihat detail paket ${index + 1}`}
             >
-              <img
+              <Image
                 src={img}
                 alt={`Paket ${index + 1}`}
+                width={600}
+                height={400}
                 className="w-full h-64 object-cover"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
@@ -66,10 +69,12 @@ const PaketGallerySection = () => {
             onClick={() => setSelectedImage(null)}
           >
             <div className="max-w-4xl max-h-full">
-              <img
+              <Image
                 src={selectedImage}
                 alt="Paket Detail"
                 className="max-w-full max-h-full object-contain rounded-lg"
+                width={800}
+                height={400}
               />
             </div>
             <button

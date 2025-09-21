@@ -1,5 +1,6 @@
 import React from "react";
 import { Users, CheckCircle, Heart, Shield, Award, Star } from "lucide-react";
+import Image from "next/image";
 // Keunggulan Section Component
 const KeunggulanSection = () => {
   const keunggulan = [
@@ -44,10 +45,12 @@ const KeunggulanSection = () => {
           </div>
 
           <div>
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               alt="Keunggulan"
               className="rounded-2xl shadow-2xl"
+              width={800}
+              height={400}
             />
           </div>
         </div>

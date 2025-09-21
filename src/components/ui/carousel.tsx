@@ -1,5 +1,6 @@
 "use client";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
+import Image from "next/image";
 import { useState, useRef, useId, useEffect } from "react";
 
 interface SlideData {
@@ -20,7 +21,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
 
   const xRef = useRef(0);
   const yRef = useRef(0);
-  const frameRef = useRef<number>();
+  const frameRef = useRef<number | null>(null);
 
   useEffect(() => {
     const animate = () => {
@@ -38,7 +39,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
     frameRef.current = requestAnimationFrame(animate);
 
     return () => {
-      if (frameRef.current) {
+      if (frameRef.current !== null) {
         cancelAnimationFrame(frameRef.current);
       }
     };
@@ -90,7 +91,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
                 : "none",
           }}
         >
-          <img
+          <Image
             className="absolute inset-0 w-[120%] h-[120%] object-cover opacity-100 transition-opacity duration-600 ease-in-out"
             style={{
               opacity: current === index ? 1 : 0.5,
@@ -100,6 +101,8 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
             onLoad={imageLoaded}
             loading="eager"
             decoding="sync"
+            width={800}
+            height={800}
           />
           {current === index && (
             <div className="absolute inset-0 bg-black/30 transition-all duration-1000" />

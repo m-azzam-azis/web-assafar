@@ -2,6 +2,7 @@
 import React from "react";
 import { Star, Award, Heart } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 const AboutSection = () => {
   const cards = [
     {
@@ -64,10 +65,12 @@ const AboutSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               alt="Umroh Journey"
               className="rounded-2xl shadow-2xl"
+              width={800}
+              height={400}
             />
           </motion.div>
 
@@ -75,7 +78,7 @@ const AboutSection = () => {
             {cards.map((card, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-colors duration-300 transform hover:-translate-y-2"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

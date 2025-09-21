@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 // Umrah Types Section Component
 const UmrahTypesSection = () => {
   const types = [
@@ -58,14 +59,29 @@ const UmrahTypesSection = () => {
           {types.map((type, index) => (
             <motion.div
               key={index}
-              className="relative h-96 rounded-2xl overflow-hidden group cursor-pointer transform hover:scale-105 transition-all duration-300 shadow-lg"
+              className="relative h-96 rounded-2xl overflow-hidden group cursor-pointer transform transition-colors duration-300 shadow-lg"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.2, ease: "easeOut" }, // No delay for hover
+              }}
+              // Add transition for when unhovered (exit)
+              animate={{
+                scale: 1,
+                opacity: 1,
+                y: 0,
+                transition: {
+                  scale: { duration: 0.2, ease: "easeOut" }, // Fast scale return
+                  opacity: { duration: 0.1, delay: index * 0.9 }, // Keep delay for initial load
+                  y: { duration: 0.1, delay: index * 0.9 }, // Keep delay for initial load
+                },
+              }}
             >
-              <img
+              <Image
+                width={400}
+                height={400}
                 src={type.image}
                 alt={type.title}
                 className="w-full h-full object-cover"

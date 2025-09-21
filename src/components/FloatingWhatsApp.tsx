@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 
 const FloatingWhatsApp = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,14 +30,14 @@ const FloatingWhatsApp = () => {
     >
       {isOpen && (
         <motion.div
-          className="mb-4 bg-white rounded-lg shadow-lg p-4 w-64"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
+          className="absolute bottom-full right-0 mb-4 bg-white rounded-lg shadow-lg p-4 w-64"
+          initial={{ opacity: 0, scale: 0.8, y: -20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.3 }}
         >
           <div className="flex items-center mb-3">
             <div className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
-              <MessageCircle className="text-white" size={20} />
+              <FaWhatsapp className="text-white" size={20} />
             </div>
             <div className="ml-3">
               <h3 className="font-semibold text-gray-800">Assafar Travel</h3>
@@ -58,7 +58,7 @@ const FloatingWhatsApp = () => {
 
       <motion.button
         onClick={toggleChat}
-        className="w-14 h-14 bg-green-50 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg text-white transition-colors"
+        className="w-14 h-14 bg-green-600 hover:bg-green-700 rounded-full flex items-center justify-center shadow-lg text-white transition-colors"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         animate={{
@@ -73,7 +73,7 @@ const FloatingWhatsApp = () => {
           repeat: Infinity,
         }}
       >
-        <MessageCircle size={24} />
+        <FaWhatsapp size={24} />
         {isOpen && (
           <motion.div
             className="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center"
