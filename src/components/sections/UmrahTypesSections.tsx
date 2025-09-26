@@ -8,20 +8,17 @@ const UmrahTypesSection = () => {
     {
       title: "Umroh Private",
       subtitle: "Untuk kenyamanan Anda",
-      image:
-        "https://images.unsplash.com/photo-1564769662533-4f00a87b4056?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image: "/umroh-types/private.jpg",
     },
     {
       title: "Umroh Reguler",
       subtitle: "Cocok untuk semua golongan",
-      image:
-        "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image: "/umroh-types/reguler.jpg",
     },
     {
       title: "Umroh Tahapan",
       subtitle: "Lebih murah seiring waktu",
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image: "/umroh-types/tahapan.jpg",
     },
   ];
 

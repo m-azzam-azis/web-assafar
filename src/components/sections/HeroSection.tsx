@@ -26,10 +26,10 @@ const item = {
 const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
-    "https://images.unsplash.com/photo-1564769662533-4f00a87b4056?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-    "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-    "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-    "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    "/assets/hero-1.jpg",
+    "/assets/hero-2.jpg",
+    "/assets/hero-3.jpg",
+    "/assets/hero-4.jpg",
   ];
 
   useEffect(() => {

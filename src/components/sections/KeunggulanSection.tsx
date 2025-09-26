@@ -111,7 +111,7 @@ const KeunggulanSection = () => {
             className="flex justify-center"
           >
             <Image
-              src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              src="/assets/keunggulan.jpg"
               alt="Keunggulan"
               className="rounded-2xl shadow-2xl w-full h-full object-cover"
               width={800}
