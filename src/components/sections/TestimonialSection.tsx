@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { staggerContainer, staggerItem } from "@/lib/animations";
 
 // Testimonial Section Component
 const TestimonialSection = () => {
@@ -36,28 +37,19 @@ const TestimonialSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
         >
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-white mb-6"
             style={{ fontFamily: "Playfair Display, serif" }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            variants={staggerItem}
           >
             Testimoni Jamaah
           </motion.h2>
-          <motion.p
-            className="text-xl text-gray-300"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
+          <motion.p className="text-xl text-gray-300" variants={staggerItem}>
             Kepuasan jamaah adalah kebanggaan kami
           </motion.p>
         </motion.div>

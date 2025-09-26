@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
 import { Phone, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import { staggerContainer, staggerItem } from "@/lib/animations";
 // Mitra Section Component
 const MitraSection = () => {
   const offices = [
@@ -35,14 +38,21 @@ const MitraSection = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2
+          <motion.div
+            className="text-center mb-16"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2
               className="text-4xl md:text-5xl font-bold text-white mb-6"
               style={{ fontFamily: "Playfair Display, serif" }}
+              variants={staggerItem}
             >
               Kesempatan Menjadi Mitra Assafar
-            </h2>
-            <div className="max-w-4xl mx-auto">
+            </motion.h2>
+            <motion.div className="max-w-4xl mx-auto" variants={staggerItem}>
               <p className="text-xl text-white leading-relaxed">
                 Kami membuka kesempatan untuk keagenan secara individu atau bagi
                 Anda yang ingin menjadi mitra di daerah. Dengan dukungan penuh
@@ -50,30 +60,51 @@ const MitraSection = () => {
                 pariwisata internasional berkualitas tinggi kepada jamaah di
                 komunitas Anda.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="mb-20">
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 mx-auto block">
+          <motion.div
+            className="mb-20"
+            variants={staggerItem}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.button
+              className="bg-yellow-500 text-black px-8 py-4 rounded-full text-lg font-semibold mx-auto block"
+              whileHover={{ backgroundColor: "#ca8a04", scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Bergabung Sebagai Mitra
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
       </section>
       <section className="py-40 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h3
+          <motion.div
+            className="text-center mb-12"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h3
               className="text-3xl font-bold text-gray-900 mb-8"
               style={{ fontFamily: "Playfair Display, serif" }}
+              variants={staggerItem}
             >
               Kantor Cabang
-            </h3>
-          </div>
+            </motion.h3>
+          </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {offices.map((office, index) => (
-              <div key={index} className="bg-gray-50 rounded-2xl p-8">
+              <motion.div
+                key={index}
+                className="bg-gray-50 rounded-2xl p-8"
+                variants={staggerItem}
+              >
                 <h4
                   className="text-2xl font-bold mb-4 text-yellow-600"
                   style={{ fontFamily: "Playfair Display, serif" }}
@@ -90,7 +121,7 @@ const MitraSection = () => {
                     <p className="text-gray-600">{office.phone}</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

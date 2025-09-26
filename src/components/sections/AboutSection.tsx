@@ -3,6 +3,7 @@ import React from "react";
 import { Star, Award, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { staggerContainer, staggerItem } from "@/lib/animations";
 const AboutSection = () => {
   const cards = [
     {
@@ -30,27 +31,21 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
         >
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-black mb-6"
             style={{ fontFamily: "Playfair Display, serif" }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            variants={staggerItem}
           >
             Mengapa Memilih Kami?
           </motion.h2>
           <motion.p
             className="text-xl text-gray-60 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            variants={staggerItem}
           >
             Kepercayaan Anda adalah prioritas utama kami. Dengan dedikasi tinggi
             dan pelayanan prima, kami siap mengantarkan Anda menuju tanah suci
@@ -60,10 +55,10 @@ const AboutSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            variants={staggerItem}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
           >
             <Image
               src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -78,12 +73,13 @@ const AboutSection = () => {
             {cards.map((card, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-colors duration-300 transform hover:-translate-y-2"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
+                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transition-colors duration-300 transform"
+                variants={staggerItem}
+                whileHover={{
+                  y: -5,
+                  boxShadow:
+                    "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                }}
               >
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">{card.icon}</div>
@@ -91,19 +87,13 @@ const AboutSection = () => {
                     <motion.h3
                       className="text-2xl font-bold text-black mb-3"
                       style={{ fontFamily: "Playfair Display, serif" }}
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                      variants={staggerItem}
                     >
                       {card.title}
                     </motion.h3>
                     <motion.p
                       className="text-gray-600 leading-relaxed"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                      variants={staggerItem}
                     >
                       {card.content}
                     </motion.p>

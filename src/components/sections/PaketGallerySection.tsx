@@ -1,7 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { X } from "lucide-react";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import { staggerContainer, staggerItem } from "@/lib/animations";
 
 const PaketGallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -17,23 +19,30 @@ const PaketGallerySection = () => {
   return (
     <section id="packages" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2
+        <motion.div
+          className="text-center mb-16"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <motion.h2
             className="text-4xl md:text-5xl font-bold text-black mb-6"
             style={{ fontFamily: "Playfair Display, serif" }}
+            variants={staggerItem}
           >
             Paket Umroh Kami
-          </h2>
-          <p className="text-xl text-gray-600">
+          </motion.h2>
+          <motion.p className="text-xl text-gray-600" variants={staggerItem}>
             Lihat berbagai pilihan paket umroh yang tersedia
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {packages.map((img, index) => (
-            <div
+            <motion.div
               key={index}
-              className="cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="cursor-pointer rounded-2xl overflow-hidden shadow-lg"
               onClick={() => setSelectedImage(img)}
               role="button"
               tabIndex={0}
@@ -44,6 +53,13 @@ const PaketGallerySection = () => {
                 }
               }}
               aria-label={`Lihat detail paket ${index + 1}`}
+              variants={staggerItem}
+              whileHover={{
+                scale: 1.05,
+                boxShadow:
+                  "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+              }}
+              transition={{ duration: 0.3 }}
             >
               <Image
                 src={img}
@@ -57,7 +73,7 @@ const PaketGallerySection = () => {
                     "https://placehold.co/600x400?text=Image+Not+Available";
                 }}
               />
-            </div>
+            </motion.div>
           ))}
         </div>
 
