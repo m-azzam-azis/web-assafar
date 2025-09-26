@@ -4,26 +4,10 @@ import { Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { staggerContainer, staggerItem } from "@/lib/animations";
+import BranchAccordion from "../BranchAccordion";
+
 // Mitra Section Component
 const MitraSection = () => {
-  const offices = [
-    {
-      city: "Medan",
-      address: "Jl. Gatot Subroto No. 123",
-      phone: "+62 21 1234 5678",
-    },
-    {
-      city: "Bogor",
-      address: "Jl. Raya Pajajaran No. 456",
-      phone: "+62 251 234 5678",
-    },
-    {
-      city: "Bali",
-      address: "Jl. Sunset Road No. 789",
-      phone: "+62 361 234 5678",
-    },
-  ];
-
   return (
     <>
       <section className="py-20 relative">
@@ -71,8 +55,14 @@ const MitraSection = () => {
             viewport={{ once: true }}
           >
             <motion.button
-              className="bg-yellow-500 text-black px-8 py-4 rounded-full text-lg font-semibold mx-auto block"
-              whileHover={{ backgroundColor: "#ca8a04", scale: 1.05 }}
+              className="text-black px-8 py-4 rounded-full text-lg font-semibold mx-auto block cursor-pointer"
+              style={{ backgroundColor: "rgb(234 179 8)" }} // yellow-500 equivalent
+              whileHover={{
+                backgroundColor: "rgb(250 204 21)", // yellow-400
+                scale: 1.05,
+                transition: { duration: 0.2, ease: "easeOut" },
+              }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               whileTap={{ scale: 0.95 }}
             >
               Bergabung Sebagai Mitra
@@ -98,31 +88,8 @@ const MitraSection = () => {
             </motion.h3>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {offices.map((office, index) => (
-              <motion.div
-                key={index}
-                className="bg-gray-50 rounded-2xl p-8"
-                variants={staggerItem}
-              >
-                <h4
-                  className="text-2xl font-bold mb-4 text-yellow-600"
-                  style={{ fontFamily: "Playfair Display, serif" }}
-                >
-                  {office.city}
-                </h4>
-                <div className="space-y-3">
-                  <div className="flex items-start space-x-3">
-                    <MapPin className="w-5 h-5 text-yellow-600 mt-1 flex-shrink-0" />
-                    <p className="text-gray-600">{office.address}</p>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-yellow-600 flex-shrink-0" />
-                    <p className="text-gray-600">{office.phone}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+          <div className="max-w-3xl mx-auto">
+            <BranchAccordion />
           </div>
         </div>
       </section>

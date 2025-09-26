@@ -6,7 +6,7 @@ import { staggerContainer, staggerItem } from "@/lib/animations";
 const UmrahTypesSection = () => {
   const types = [
     {
-      title: "Umroh VIP",
+      title: "Umroh Private",
       subtitle: "Untuk kenyamanan Anda",
       image:
         "https://images.unsplash.com/photo-1564769662533-4f00a87b4056?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",

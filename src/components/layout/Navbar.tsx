@@ -33,14 +33,14 @@ const Navbar = () => {
           : "bg-white/10 backdrop-blur-md"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <div
-              className="text-2xl font-bold bg-black px-2 py-1 rounded-xl"
+              className="text-2xl font-bold  px-2 py-1 rounded-xl bg-transparent"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              <Image src="/logo.png" alt="Logo" width={100} height={40} />
+              <Image src="/logo.avif" alt="Logo" width={120} height={40} />
             </div>
           </div>
 
@@ -103,7 +103,7 @@ const Navbar = () => {
                     className="text-xl font-bold text-white"
                     style={{ fontFamily: "Playfair Display, serif" }}
                   >
-                    <Image src="/logo.png" alt="Logo" width={80} height={40} />
+                    <Image src="/logo.avif" alt="Logo" width={80} height={40} />
                   </div>
                   <button
                     onClick={() => setIsMenuOpen(false)}

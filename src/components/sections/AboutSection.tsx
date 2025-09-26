@@ -29,51 +29,18 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          className="text-center mb-16"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold text-black mb-6"
-            style={{ fontFamily: "Playfair Display, serif" }}
-            variants={staggerItem}
-          >
-            Mengapa Memilih Kami?
-          </motion.h2>
-          <motion.p
-            className="text-xl text-gray-60 max-w-3xl mx-auto"
-            variants={staggerItem}
-          >
-            Kepercayaan Anda adalah prioritas utama kami. Dengan dedikasi tinggi
-            dan pelayanan prima, kami siap mengantarkan Anda menuju tanah suci
-            dengan aman dan nyaman.
-          </motion.p>
-        </motion.div>
-
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="flex lg:flex-col flex-col items-center">
           <motion.div
-            variants={staggerItem}
+            className="space-y-8 flex flex-col lg:flex-row  lg:space-x-6 w-full"
+            variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <Image
-              src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Umroh Journey"
-              className="rounded-2xl shadow-2xl"
-              width={800}
-              height={400}
-            />
-          </motion.div>
-
-          <div className="space-y-8">
             {cards.map((card, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transition-colors duration-300 transform"
+                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transition-colors duration-300 transform flex-1"
                 variants={staggerItem}
                 whileHover={{
                   y: -5,
@@ -84,24 +51,20 @@ const AboutSection = () => {
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">{card.icon}</div>
                   <div>
-                    <motion.h3
+                    <h3
                       className="text-2xl font-bold text-black mb-3"
                       style={{ fontFamily: "Playfair Display, serif" }}
-                      variants={staggerItem}
                     >
                       {card.title}
-                    </motion.h3>
-                    <motion.p
-                      className="text-gray-600 leading-relaxed"
-                      variants={staggerItem}
-                    >
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
                       {card.content}
-                    </motion.p>
+                    </p>
                   </div>
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

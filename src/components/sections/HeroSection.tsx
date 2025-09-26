@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 // Define animation variants for staggered animation
 const container = {
@@ -85,13 +86,14 @@ const HeroSection = () => {
               dengan pengalaman lebih dari 10 tahun.
             </motion.p>
 
-            <motion.button
-              className="bg-gray-50 text-black px-6 py-3 rounded-full text-lg font-semibold shadow-lg cursor-pointer"
+            <motion.a
+              className="bg-gray-50 text-black px-6 py-3 rounded-full text-lg font-semibold shadow-lg cursor-pointer flex items-center gap-2 w-fit"
               variants={item}
               whileHover={{ scale: 1.05 }}
+              href="#packages"
             >
-              Konsultasi Sekarang
-            </motion.button>
+              Lihat Paket <ArrowRight />
+            </motion.a>
           </motion.div>
         </div>
       </div>

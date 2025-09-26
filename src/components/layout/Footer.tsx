@@ -4,8 +4,11 @@ import { FaTiktok, FaWhatsapp } from "react-icons/fa6";
 
 import Link from "next/link";
 import Image from "next/image";
+import { branchOffices } from "@/lib/branchData";
 
 const Footer = () => {
+  const jakartaBranch = branchOffices.find((branch) => branch.id === 1);
+
   return (
     <footer
       id="contact"
@@ -15,7 +18,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <Image
-              src="/logo.png"
+              src="/logo-putih.png"
               alt="Logo"
               className="mb-4"
               height={100}
@@ -28,21 +31,27 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <Link
-                href={"https://wa.me/62123456789"}
+                href={`https://wa.me/${jakartaBranch?.phone?.replace("+", "")}`}
                 target="_blank"
                 className="w-10 h-10 bg-yellow-500 hover:bg-yellow-400 rounded-full flex items-center justify-center"
               >
                 <FaWhatsapp className="w-5 h-5 text-black" />
               </Link>
               <Link
-                href={"https://www.instagram.com/assafarimanamanah/"}
+                href={`https://www.instagram.com/${jakartaBranch?.instagram?.replace(
+                  "@",
+                  ""
+                )}`}
                 target="_blank"
                 className="w-10 h-10 bg-yellow-500 hover:bg-yellow-400 rounded-full flex items-center justify-center"
               >
                 <Instagram className="w-5 h-5 text-black" />
               </Link>
               <Link
-                href={"https://www.tiktok.com/assafarimanamanah/"}
+                href={`https://www.tiktok.com/@${jakartaBranch?.tiktok?.replace(
+                  "@",
+                  ""
+                )}`}
                 target="_blank"
                 className="w-10 h-10 bg-yellow-500 hover:bg-yellow-400 rounded-full flex items-center justify-center"
               >
@@ -64,7 +73,7 @@ const Footer = () => {
                   href="#"
                   className="text-gray-300 hover:text-yellow-500 transition-colors"
                 >
-                  Umroh VIP
+                  Umroh Private
                 </Link>
               </li>
               <li>
@@ -99,28 +108,17 @@ const Footer = () => {
               className="text-xl font-semibold mb-6"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              Kontak Info
+              Alamat Pusat
             </h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-yellow-500 mt-1 flex-shrink-0" />
-                <p className="text-gray-300">
-                  Jl. Kemang Raya No. 123
-                  <br />
-                  Jakarta Selatan, 12560
-                </p>
+                <div className="text-gray-300 ">{jakartaBranch?.address}</div>
               </div>
-              <div className="flex items-center space-x-3">
-                <FaWhatsapp className="w-5 h-5 text-yellow-500 flex-shrink-0" />
-                <p className="text-gray-300">+62 21 1234 5678</p>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Instagram className="w-5 h-5 text-yellow-500 flex-shrink-0" />
-                <p className="text-gray-300">info@assafar.com</p>
-              </div>
+
               <div className="flex items-center space-x-3">
                 <Clock className="w-5 h-5 text-yellow-500 flex-shrink-0" />
-                <p className="text-gray-300">Senin - Jumat: 08:00 - 17:00</p>
+                <p className="text-gray-300">Senin - Jumat: 09:00 - 17:00</p>
               </div>
             </div>
           </div>
