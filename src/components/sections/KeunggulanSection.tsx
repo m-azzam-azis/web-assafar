@@ -113,7 +113,7 @@ const KeunggulanSection = () => {
             <Image
               src="/assets/keunggulan.jpg"
               alt="Keunggulan"
-              className="rounded-2xl shadow-2xl w-full h-full object-cover"
+              className="rounded-2xl shadow-2xl w-full h-full object-cover max-lg:hidden"
               width={800}
               height={400}
             />

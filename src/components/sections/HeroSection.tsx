@@ -65,7 +65,7 @@ const HeroSection = () => {
       <div className="relative h-full flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="max-w-1/2"
+            className="lg:max-w-1/2"
             variants={container}
             initial="hidden"
             animate="visible"
