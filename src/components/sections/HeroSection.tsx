@@ -1,6 +1,26 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+
+// Define animation variants for staggered animation
+const container = {
+  visible: {
+    opacity: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.3,
+    },
+  },
+  hidden: {
+    opacity: 0,
+  },
+};
+
+const item = {
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+  hidden: { opacity: 0, y: 20 },
+};
+
 // Hero Section Component
 const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -44,36 +64,31 @@ const HeroSection = () => {
       <div className="relative h-full flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="max-w-3xl"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            className="max-w-1/2"
+            variants={container}
+            initial="hidden"
+            animate="visible"
           >
             <motion.h1
               className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
               style={{ fontFamily: "Playfair Display, serif" }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              variants={item}
             >
               Perjalanan Umroh dan Haji yang
               <span className="text-yellow-400"> Tak Terlupakan!</span>
             </motion.h1>
             <motion.p
               className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              variants={item}
             >
               Wujudkan impian spiritual Anda bersama kami. Layanan terpercaya
               dengan pengalaman lebih dari 10 tahun.
             </motion.p>
-            {/* // Option 1: Use only Framer Motion (recommended) */}
+
             <motion.button
-              className="bg-yellow-500 text-black px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-yellow-600 transition-colors duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              className="bg-gray-50 text-black px-6 py-3 rounded-full text-lg font-semibold shadow-lg cursor-pointer"
+              variants={item}
+              whileHover={{ scale: 1.05 }}
             >
               Konsultasi Sekarang
             </motion.button>

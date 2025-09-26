@@ -1,13 +1,16 @@
 import React from "react";
 import { MapPin, Instagram, Clock } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa6";
+import { FaTiktok, FaWhatsapp } from "react-icons/fa6";
 
 import Link from "next/link";
 import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-black text-white py-16 rounded-t-[4rem]">
+    <footer
+      id="contact"
+      className="bg-black text-white py-16 md:rounded-t-3xl xl:rounded-t-[4rem]"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
@@ -27,16 +30,23 @@ const Footer = () => {
               <Link
                 href={"https://wa.me/62123456789"}
                 target="_blank"
-                className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center"
+                className="w-10 h-10 bg-yellow-500 hover:bg-yellow-400 rounded-full flex items-center justify-center"
               >
                 <FaWhatsapp className="w-5 h-5 text-black" />
               </Link>
               <Link
                 href={"https://www.instagram.com/assafarimanamanah/"}
                 target="_blank"
-                className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center"
+                className="w-10 h-10 bg-yellow-500 hover:bg-yellow-400 rounded-full flex items-center justify-center"
               >
                 <Instagram className="w-5 h-5 text-black" />
+              </Link>
+              <Link
+                href={"https://www.tiktok.com/assafarimanamanah/"}
+                target="_blank"
+                className="w-10 h-10 bg-yellow-500 hover:bg-yellow-400 rounded-full flex items-center justify-center"
+              >
+                <FaTiktok className="size-4 text-black" />
               </Link>
             </div>
           </div>
