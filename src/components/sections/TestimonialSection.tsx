@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 import { staggerContainer, staggerItem } from "@/lib/animations";
+import Autoplay from "embla-carousel-autoplay";
 
 // Testimonial Section Component
 const TestimonialSection = () => {
   const testimonials = [
+    {
+      name: "Ahmad Fauzi",
+      title: "Januari 2024",
+      quote:
+        "Pelayanan yang sangat memuaskan. Tim Assafar benar-benar profesional dan membantu perjalanan umroh saya menjadi pengalaman yang tak terlupakan.",
+    },
+    {
+      name: "Ahmad Fauzi",
+      title: "Januari 2024",
+      quote:
+        "Pelayanan yang sangat memuaskan. Tim Assafar benar-benar profesional dan membantu perjalanan umroh saya menjadi pengalaman yang tak terlupakan.",
+    },
     {
       name: "Ahmad Fauzi",
       title: "Januari 2024",
@@ -32,6 +50,8 @@ const TestimonialSection = () => {
     },
   ];
 
+  const [, setCurrentIndex] = useState(0);
+
   return (
     <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,12 +75,58 @@ const TestimonialSection = () => {
         </motion.div>
 
         <div className="flex justify-center">
-          <InfiniteMovingCards
-            items={testimonials}
-            direction="right"
-            speed="slow"
-            className="w-full"
-          />
+          <Carousel
+            className="w-full max-w-6xl"
+            plugins={[
+              Autoplay({
+                delay: 3000, // 2 seconds delay
+                stopOnMouseEnter: true,
+                stopOnInteraction: false,
+              }),
+            ]}
+            opts={{
+              align: "start",
+              loop: true,
+              duration: 20, // Animation duration
+            }}
+            setApi={(api) => {
+              if (api) {
+                api.on("select", () => {
+                  setCurrentIndex(api.selectedScrollSnap());
+                });
+              }
+            }}
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem
+                  key={index}
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+                >
+                  <div className="p-1">
+                    <Card className="bg-gray-800 border-gray-700 h-full">
+                      <CardContent className="flex items-center justify-center p-6 text-center">
+                        <div>
+                          <p className="text-lg text-gray-200 mb-4 italic">
+                            &ldquo;{testimonial.quote}&rdquo;
+                          </p>
+                          <div className="text-white">
+                            <h4 className="font-semibold">
+                              {testimonial.name}
+                            </h4>
+                            <p className="text-gray-400 text-sm">
+                              {testimonial.title}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            {/* Removing navigation arrows as requested */}
+          </Carousel>
         </div>
       </div>
     </section>
