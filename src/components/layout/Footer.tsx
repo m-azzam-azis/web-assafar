@@ -24,7 +24,7 @@ const Footer = () => {
               height={100}
               width={100}
             />
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <p className="text-gray-300 mb-6 leading-relaxed text-">
               Mewujudkan impian spiritual Anda untuk beribadah di tanah suci
               dengan pelayanan terbaik dan terpercaya. Pengalaman lebih dari 10
               tahun melayani jamaah umroh dan haji.
@@ -63,7 +63,7 @@ const Footer = () => {
           <div>
             <h3
               className="text-xl font-semibold mb-6"
-              style={{ fontFamily: "Playfair Display, serif" }}
+             
             >
               Layanan Kami
             </h3>
@@ -106,7 +106,7 @@ const Footer = () => {
           <div>
             <h3
               className="text-xl font-semibold mb-6"
-              style={{ fontFamily: "Playfair Display, serif" }}
+             
             >
               Alamat Pusat
             </h3>

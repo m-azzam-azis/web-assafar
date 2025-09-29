@@ -29,18 +29,24 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/90 backdrop-blur-md shadow-lg"
-          : "bg-white/10 backdrop-blur-md"
+          ? "bg-white/80 backdrop-blur-md shadow-lg"
+          : "bg-transparent backdrop-blur-md"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+      <div className="max-w-7xl mx-auto px-4 py-2 sm:px-6 lg:px-8 ">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <div
-              className="text-2xl font-bold  px-2 py-1 rounded-xl bg-transparent"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
-              <Image src="/logo.avif" alt="Logo" width={120} height={40} />
+            <div className="text-2xl font-bold  rounded-xl bg-transparent">
+              {isScrolled ? (
+                <Image src="/logo.avif" alt="Logo" width={120} height={120} />
+              ) : (
+                <Image
+                  src="/logo-putih.png"
+                  alt="Logo"
+                  width={120}
+                  height={120}
+                />
+              )}
             </div>
           </div>
 
@@ -99,10 +105,7 @@ const Navbar = () => {
               <div className="flex flex-col h-full">
                 {/* Sidebar header */}
                 <div className="flex items-center justify-between p-4 border-b border-gray-800">
-                  <div
-                    className="text-xl font-bold text-white"
-                    style={{ fontFamily: "Playfair Display, serif" }}
-                  >
+                  <div className="text-xl font-bold text-white">
                     <Image src="/logo.avif" alt="Logo" width={80} height={40} />
                   </div>
                   <button

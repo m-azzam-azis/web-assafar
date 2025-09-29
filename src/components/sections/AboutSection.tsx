@@ -51,10 +51,7 @@ const AboutSection = () => {
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">{card.icon}</div>
                   <div>
-                    <h3
-                      className="text-2xl font-bold text-black mb-3"
-                      style={{ fontFamily: "Playfair Display, serif" }}
-                    >
+                    <h3 className="text-2xl font-bold text-black mb-3">
                       {card.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">

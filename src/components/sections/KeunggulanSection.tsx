@@ -63,7 +63,6 @@ const KeunggulanSection = () => {
         >
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-black mb-6"
-            style={{ fontFamily: "Playfair Display, serif" }}
             variants={staggerItem}
           >
             Keunggulan Kami

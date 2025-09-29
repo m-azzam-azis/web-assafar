@@ -1,3 +1,4 @@
+/* El Messiri font is imported via next/font in layout.tsx */
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -125,5 +126,13 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-el-messiri);
   }
 }

@@ -34,7 +34,6 @@ const UmrahTypesSection = () => {
         >
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-black mb-6"
-            style={{ fontFamily: "Playfair Display, serif" }}
             variants={staggerItem}
           >
             Pilihan Paket Umroh
@@ -67,7 +66,6 @@ const UmrahTypesSection = () => {
                 <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 text-white">
                   <motion.h3
                     className="text-2xl font-bold mb-2"
-                    style={{ fontFamily: "Playfair Display, serif" }}
                     variants={staggerItem}
                   >
                     {type.title}

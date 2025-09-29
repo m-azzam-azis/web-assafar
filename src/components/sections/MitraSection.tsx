@@ -31,7 +31,6 @@ const MitraSection = () => {
           >
             <motion.h2
               className="text-4xl md:text-5xl font-bold text-white mb-6"
-              style={{ fontFamily: "Playfair Display, serif" }}
               variants={staggerItem}
             >
               Kesempatan Menjadi Mitra Assafar
@@ -81,7 +80,6 @@ const MitraSection = () => {
           >
             <motion.h3
               className="text-3xl font-bold text-gray-900 mb-8"
-              style={{ fontFamily: "Playfair Display, serif" }}
               variants={staggerItem}
             >
               Kantor Cabang

@@ -71,28 +71,19 @@ const HeroSection = () => {
             animate="visible"
           >
             <motion.h1
-              className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
-              style={{ fontFamily: "Playfair Display, serif" }}
+              className="text-[2.5rem] md:text-7xl font-extrabold text-white mb-6 leading-tight px-2"
               variants={item}
             >
-              Perjalanan Umroh dan Haji yang
-              <span className="text-yellow-400"> Tak Terlupakan!</span>
+              Perjalanan Umroh dan Haji yang Tak Terlupakan!
             </motion.h1>
-            <motion.p
-              className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
-              variants={item}
-            >
-              Wujudkan impian spiritual Anda bersama kami. Layanan terpercaya
-              dengan pengalaman lebih dari 10 tahun.
-            </motion.p>
 
             <motion.a
-              className="bg-gray-50 text-black px-6 py-3 rounded-full text-lg font-semibold shadow-lg cursor-pointer flex items-center gap-2 w-fit"
+              className="bg-gray-50 text-black px-6 py-3 rounded-full text font-semibold shadow-lg cursor-pointer flex items-center gap-2 w-fit text-sm md:text-base"
               variants={item}
               whileHover={{ scale: 1.05 }}
               href="#packages"
             >
-              Lihat Paket <ArrowRight />
+              Lihat Paket <ArrowRight className="size-4" />
             </motion.a>
           </motion.div>
         </div>

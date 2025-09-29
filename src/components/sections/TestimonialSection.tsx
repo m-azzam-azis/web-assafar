@@ -101,7 +101,6 @@ const TestimonialSection = () => {
         >
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-white mb-6"
-            style={{ fontFamily: "Playfair Display, serif" }}
             variants={staggerItem}
           >
             Testimoni Jamaah
