@@ -77,28 +77,21 @@ const HeroSection = () => {
               Feel the experinence
             </motion.div>
             <motion.h1
-              className="text-[2.5rem] md:text-7xl font-extrabold text-white mb-6 leading-tight px-2"
+              className="text-[2.5rem] sm:text-6xl md:text-7xl font-extrabold text-white leading-tight px-2 "
               variants={item}
             >
               Perjalanan Umroh dan Haji yang Tak Terlupakan!
             </motion.h1>
 
             <motion.a
-              className="bg-gray-50 text-black px-6 md:px-8 py-3 rounded-full text shadow-lg cursor-pointer flex items-center gap-2 w-fit text-sm md:text-base relative"
+              className="bg-gray-50 text-black px-6 md:px-8 py-3 rounded-full text shadow-lg cursor-pointer flex items-center gap-2 w-fit text-sm md:text-base relative "
               variants={item}
               whileHover={{ scale: 1.05 }}
               href="#packages"
             >
               <motion.span>
                 Lihat Paket
-                <motion.span
-                  className="absolute left-0 -bottom-1 h-[2px] bg-black"
-                  variants={{
-                    rest: { width: "0%" },
-                    hover: { width: "100%" },
-                  }}
-                  transition={{ duration: 0.3 }}
-                />
+                <span className="absolute left-0 -bottom-1 h-[2px] bg-black w-3 group-hover:w-full" />
               </motion.span>
               <ArrowRight className="size-4" />
             </motion.a>

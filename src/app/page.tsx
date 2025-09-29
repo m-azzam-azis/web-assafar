@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import HeroSection from "@/components/sections/HeroSection";
-import AboutSection from "@/components/sections/AboutSection";
+// import AboutSection from "@/components/sections/AboutSection";
 import UmrahTypesSection from "@/components/sections/UmrahTypesSections";
 import TahapanUmrohSection from "@/components/sections/TahapanSection";
 import KeunggulanSection from "@/components/sections/KeunggulanSection";
@@ -16,7 +16,7 @@ export default function Home() {
       {/* Google Fonts */}
 
       <HeroSection />
-      <AboutSection />
+      {/* <AboutSection /> */}
       <UmrahTypesSection />
       <TahapanUmrohSection />
       <KeunggulanSection />
