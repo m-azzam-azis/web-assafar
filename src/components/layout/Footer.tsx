@@ -33,6 +33,7 @@ const Footer = () => {
               <Link
                 href={`https://wa.me/${jakartaBranch?.phone?.replace("+", "")}`}
                 target="_blank"
+                aria-label="whatsapp"
                 className="w-10 h-10 bg-yellow-500 hover:bg-yellow-400 rounded-full flex items-center justify-center"
               >
                 <FaWhatsapp className="w-5 h-5 text-black" />
@@ -43,6 +44,7 @@ const Footer = () => {
                   ""
                 )}`}
                 target="_blank"
+                aria-label="instagram"
                 className="w-10 h-10 bg-yellow-500 hover:bg-yellow-400 rounded-full flex items-center justify-center"
               >
                 <Instagram className="w-5 h-5 text-black" />
@@ -53,6 +55,7 @@ const Footer = () => {
                   ""
                 )}`}
                 target="_blank"
+                aria-label="tiktok"
                 className="w-10 h-10 bg-yellow-500 hover:bg-yellow-400 rounded-full flex items-center justify-center"
               >
                 <FaTiktok className="size-4 text-black" />
@@ -61,12 +64,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3
-              className="text-xl font-semibold mb-6"
-             
-            >
-              Layanan Kami
-            </h3>
+            <h3 className="text-xl font-semibold mb-6">Layanan Kami</h3>
             <ul className="space-y-3">
               <li>
                 <Link
@@ -104,12 +102,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3
-              className="text-xl font-semibold mb-6"
-             
-            >
-              Alamat Pusat
-            </h3>
+            <h3 className="text-xl font-semibold mb-6">Alamat Pusat</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-yellow-500 mt-1 flex-shrink-0" />

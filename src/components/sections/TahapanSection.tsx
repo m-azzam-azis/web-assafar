@@ -22,22 +22,25 @@ const TahapanUmrohSection = () => {
             Tahapan Umroh
           </motion.h2>
           <motion.p
-            className="text-xl text-yellow-600 mb-8 font-medium"
+            className="text-lg text-yellow-600 mb-8 font-medium"
             variants={staggerItem}
           >
-            Langkah kecil menuju Baitullah
+            Langkah awal menuju Baitullah
           </motion.p>
 
           <motion.div
-            className="text-lg text-gray-700 leading-relaxed mb-8"
+            className="text-base lg:text-lg text-gray-700 leading-relaxed mb-8 space-y-2"
             variants={staggerItem}
           >
+            <h3 className="font-sans font-semibold">
+              {" "}
+              Yuk, gabung dengan program tahapan umroh! Bisa umroh mulai dari{" "}
+              <strong>14 JT*</strong> an aja.
+            </h3>
             <p>
-              Yuk, gabung dengan program tahapan umroh! Bisa umroh loh hanya
-              dengan <strong>16 JT*</strong>. Tahapan umroh adalah program
-              tabungan yang dibuat dengan pola sistem referensi. Dan ada reward
-              atau ujroh untuk calon jamaah yang mengikuti program tahapan umroh
-              sebesar
+              Tahapan umroh adalah program tabungan yang dibuat dengan pola
+              sistem referensi. Dan ada reward atau ujroh untuk calon jamaah
+              yang mengikuti program tahapan umroh sebesar
               <strong> Rp.500.000</strong> (lima ratus ribu rupiah). Para calon
               jamaah menabung di rekening sendiri di bank BSI.
             </p>
@@ -49,7 +52,7 @@ const TahapanUmrohSection = () => {
             whileHover={{ backgroundColor: "#1f2937", scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Daftar Sekarang <ArrowRight className="inline ml-2 w-5 h-5" />
+            Hubungi Kami <ArrowRight className="inline ml-2 w-5 h-5" />
           </motion.button>
 
           <motion.p

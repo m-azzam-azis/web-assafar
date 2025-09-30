@@ -75,6 +75,7 @@ const FloatingWhatsApp = () => {
           </p>
           <button
             onClick={sendMessage}
+            aria-label="whatsapp button"
             className="w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors"
           >
             Kirim Pesan

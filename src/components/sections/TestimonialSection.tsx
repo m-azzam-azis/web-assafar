@@ -155,7 +155,7 @@ const TestimonialSection = () => {
                           />
                         </div>
                         <div>
-                          <h4 className="font-semibold">{testimonial.name}</h4>
+                          <h3 className="font-semibold">{testimonial.name}</h3>
                           <p className="text-gray-400 text-sm">
                             {testimonial.title}
                           </p>

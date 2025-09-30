@@ -29,7 +29,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/80 backdrop-blur-md shadow-lg"
+          ? "bg-black/80 backdrop-blur-md shadow-lg"
           : "bg-transparent backdrop-blur-sm"
       }`}
     >
@@ -37,16 +37,12 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <div className="text-2xl font-bold  rounded-xl bg-transparent">
-              {isScrolled ? (
-                <Image src="/logo.avif" alt="Logo" width={120} height={120} />
-              ) : (
-                <Image
-                  src="/logo-putih.png"
-                  alt="Logo"
-                  width={120}
-                  height={120}
-                />
-              )}
+              <Image
+                src="/logo-putih.png"
+                alt="Logo"
+                width={120}
+                height={120}
+              />
             </div>
           </div>
 
@@ -70,10 +66,9 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
+              aria-label="mobile nav button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`p-2 rounded-md ${
-                isScrolled ? "text-black" : "text-white"
-              }`}
+              className={`p-2 rounded-md text-white`}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -106,7 +101,12 @@ const Navbar = () => {
                 {/* Sidebar header */}
                 <div className="flex items-center justify-between p-4 border-b border-gray-800">
                   <div className="text-xl font-bold text-white">
-                    <Image src="/logo.avif" alt="Logo" width={80} height={40} />
+                    <Image
+                      src="/logo-putih.png"
+                      alt="Logo"
+                      width={80}
+                      height={40}
+                    />
                   </div>
                   <button
                     onClick={() => setIsMenuOpen(false)}
