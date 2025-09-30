@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { staggerContainer, staggerItem } from "@/lib/animations";

@@ -60,6 +60,7 @@ const HeroSection = () => {
       setCurrentImage((prev) => (prev + 1) % images.length);
     }, 5000);
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMobile]);
 
   return (
