@@ -22,6 +22,26 @@ const item = {
   hidden: { opacity: 0, y: 20 },
 };
 
+// Helper function to detect mobile devices
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkIsMobile);
+    };
+  }, []);
+
+  return isMobile;
+};
+
 // Hero Section Component
 const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -32,33 +52,49 @@ const HeroSection = () => {
     "/assets/hero-4.jpg",
   ];
 
+  const isMobile = useIsMobile();
+
   useEffect(() => {
+    if (isMobile) return; // Don't run the interval on mobile
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [isMobile]);
 
   return (
     <section id="home" className="relative h-screen overflow-hidden">
-      {images.map((img, index) => (
-        <motion.div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentImage ? "opacity-100" : "opacity-0"
-          }`}
+      {isMobile ? (
+        // Single static image for mobile
+        <div
+          className="absolute inset-0"
           style={{
-            backgroundImage: `url(${img})`,
+            backgroundImage: `url(${images[0]})`, // Use first image as static image
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          initial={{ scale: 1 }}
-          animate={{
-            scale: index === currentImage ? 1.1 : 1,
-          }}
-          transition={{ duration: 5, ease: "easeOut" }}
         />
-      ))}
+      ) : (
+        // Animated slideshow for desktop
+        images.map((img, index) => (
+          <motion.div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentImage ? "opacity-100" : "opacity-0"
+            }`}
+            style={{
+              backgroundImage: `url(${img})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+            initial={{ scale: 1 }}
+            animate={{
+              scale: index === currentImage ? 1.1 : 1,
+            }}
+            transition={{ duration: 5, ease: "easeOut" }}
+          />
+        ))
+      )}
 
       <div className="absolute inset-0 bg-black/40" />
 
