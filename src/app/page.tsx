@@ -13,8 +13,6 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Google Fonts */}
-
       <HeroSection />
       {/* <AboutSection /> */}
       <UmrahTypesSection />

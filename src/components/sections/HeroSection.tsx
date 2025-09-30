@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 // Define animation variants for staggered animation
 const container = {
@@ -32,11 +33,7 @@ const useIsMobile = () => {
     };
 
     checkIsMobile();
-    window.addEventListener("resize", checkIsMobile);
-
-    return () => {
-      window.removeEventListener("resize", checkIsMobile);
-    };
+    // Only run once on mount, no resize listener needed
   }, []);
 
   return isMobile;
@@ -67,33 +64,43 @@ const HeroSection = () => {
     <section id="home" className="relative h-screen overflow-hidden">
       {isMobile ? (
         // Single static image for mobile
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url(${images[0]})`, // Use first image as static image
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+        <Image
+          src={images[0]} // Use first image as static image
+          alt="Hero background"
+          fill
+          className="object-cover"
+          quality={75}
         />
       ) : (
         // Animated slideshow for desktop
         images.map((img, index) => (
-          <motion.div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentImage ? "opacity-100" : "opacity-0"
-            }`}
-            style={{
-              backgroundImage: `url(${img})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-            initial={{ scale: 1 }}
-            animate={{
-              scale: index === currentImage ? 1.1 : 1,
-            }}
-            transition={{ duration: 5, ease: "easeOut" }}
-          />
+          <div key={index} className="absolute inset-0 overflow-hidden">
+            <motion.div
+              className="relative w-full h-full"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: index === currentImage ? 1 : 0,
+              }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <motion.div
+                className="w-full h-full"
+                initial={{ scale: 1 }}
+                animate={{
+                  scale: index === currentImage ? 1.1 : 1,
+                }}
+                transition={{ duration: 5, ease: "easeOut" }}
+              >
+                <Image
+                  src={img}
+                  alt={`Hero background ${index + 1}`}
+                  fill
+                  className="object-cover"
+                  quality={100}
+                />
+              </motion.div>
+            </motion.div>
+          </div>
         ))
       )}
 

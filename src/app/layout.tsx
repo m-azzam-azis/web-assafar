@@ -1,24 +1,11 @@
 import type { Metadata } from "next";
-import {
-  Geist,
-  Geist_Mono,
-  El_Messiri,
-} from "next/font/google";
+import { El_Messiri } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 const elMessiri = El_Messiri({
   variable: "--font-el-messiri",
-  subsets: ["latin"],
-});
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -55,9 +42,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#025a4e" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${elMessiri.variable}  antialiased `}
-      >
+      <body className={` ${elMessiri.variable}  antialiased `}>
         <Navbar />
         <main>{children}</main>
         <Footer />
