@@ -63,21 +63,21 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black/40" />
 
       <div className="relative h-full flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-3/4 flex justify-center items">
           <motion.div
-            className="lg:max-w-2/3 space-y-8"
+            className="lg:max-w-2/3 space-y-8  flex flex-col h-full justify-center"
             variants={container}
             initial="hidden"
             animate="visible"
           >
             <motion.div
-              className="bg-white/10 backdrop-blur-md shadow-white/20 px-3 py-2 text-white w-fit rounded-full text-sm shadow ring ring-white/20"
+              className="bg-white/10 backdrop-blur-md shadow-white/20 px-3 py-2 text-white w-fit rounded-full text-xs shadow ring ring-white/20"
               variants={item}
             >
               Feel the experinence
             </motion.div>
             <motion.h1
-              className="text-[2.5rem] sm:text-6xl md:text-7xl font-extrabold text-white leading-tight px-2 "
+              className="text-[2.5rem] md:text-7xl font-extrabold text-white mb-6 leading-tight px-2"
               variants={item}
             >
               Perjalanan Umroh dan Haji yang Tak Terlupakan!
@@ -91,7 +91,14 @@ const HeroSection = () => {
             >
               <motion.span>
                 Lihat Paket
-                <span className="absolute left-0 -bottom-1 h-[2px] bg-black w-3 group-hover:w-full" />
+                <motion.span
+                  className="absolute left-0 -bottom-1 h-[2px] bg-black"
+                  variants={{
+                    rest: { width: "0%" },
+                    hover: { width: "100%" },
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
               </motion.span>
               <ArrowRight className="size-4" />
             </motion.a>

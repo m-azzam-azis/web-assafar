@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa6";
 
 const FloatingWhatsApp = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const whatsappRef = useRef<HTMLDivElement>(null);
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
@@ -21,8 +22,33 @@ const FloatingWhatsApp = () => {
     window.open(url, "_blank");
   };
 
+  // Close popup when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (
+        whatsappRef.current &&
+        !whatsappRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    // Add event listeners when popup is open
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("touchstart", handleClickOutside);
+    }
+
+    // Clean up event listeners
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
     <motion.div
+      ref={whatsappRef}
       className="fixed bottom-6 right-6 z-50"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -58,7 +84,7 @@ const FloatingWhatsApp = () => {
 
       <motion.button
         onClick={toggleChat}
-        className="w-14 h-14 bg-green-600 hover:bg-green-700 rounded-full flex items-center justify-center shadow-lg text-white transition-colors"
+        className="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg text-white transition-colors"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         animate={{
