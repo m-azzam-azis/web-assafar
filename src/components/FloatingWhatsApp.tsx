@@ -85,6 +85,7 @@ const FloatingWhatsApp = () => {
 
       <motion.button
         onClick={toggleChat}
+        aria-label="open whatsapp chat"
         className="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg text-white transition-colors"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}

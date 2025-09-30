@@ -110,7 +110,7 @@ const KeunggulanSection = () => {
             className="flex justify-center"
           >
             <Image
-              src="/assets/keunggulan.jpg"
+              src="/assets/keunggulan.avif"
               alt="Keunggulan"
               className="rounded-2xl shadow-2xl w-full h-full object-cover max-lg:hidden"
               width={800}

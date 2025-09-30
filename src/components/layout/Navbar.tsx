@@ -53,9 +53,7 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`px-3 py-2 text-sm font-medium transition-colors hover:text-yellow-500 ${
-                    isScrolled ? "text-black" : "text-white"
-                  }`}
+                  className={`px-3 py-2 text-sm font-medium transition-colors hover:text-yellow-500 text-white`}
                 >
                   {item.name}
                 </Link>
