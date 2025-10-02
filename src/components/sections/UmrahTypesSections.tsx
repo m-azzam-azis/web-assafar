@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { staggerContainer, staggerItem } from "@/lib/animations";
 import { ArrowUpRight } from "lucide-react";
+
 // Umrah Types Section Component
 const UmrahTypesSection = () => {
   const types = [
@@ -10,27 +11,31 @@ const UmrahTypesSection = () => {
       title: "Umroh Reguler",
       subtitle: "Cocok untuk semua golongan",
       image: "/umroh-types/umroh-reguler.avif",
+      link: "/umrah/regular",
     },
     {
       title: "Umroh Private",
       subtitle: "Untuk kenyamanan Anda",
       image: "/umroh-types/umroh-private.avif",
+      link: "/umrah/private",
     },
 
     {
       title: "Umroh Tahapan",
       subtitle: "Lebih murah seiring waktu",
       image: "/umroh-types/umroh-tahapan.avif",
+      link: "/umrah/tahapan",
     },
     {
       title: "Paket Wisata Halal",
       subtitle: "Jelajahi dunia dengan tenang",
       image: "/umroh-types/paket-wisata.avif",
+      link: "/umrah/wisata",
     },
   ];
 
   return (
-    <section className="py-12 sm:py-16 bg-gray-50">
+    <section className="py-12 sm:py-16 bg-gray-50" id="packages">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-10 sm:mb-12"
@@ -55,7 +60,8 @@ const UmrahTypesSection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {types.map((type, index) => (
-            <motion.div
+            <motion.a
+              href={type.link}
               key={index}
               className="relative h-64 sm:h-80 rounded-2xl overflow-hidden group cursor-pointer transform transition-colors duration-300 shadow-lg"
               variants={staggerItem}
@@ -91,7 +97,7 @@ const UmrahTypesSection = () => {
                   <ArrowUpRight className="size-6 sm:size-10 text-white flex-shrink-0" />
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>

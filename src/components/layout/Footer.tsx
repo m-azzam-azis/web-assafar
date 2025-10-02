@@ -68,7 +68,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="#"
+                  href="/umrah/private"
                   className="text-gray-300 hover:text-yellow-500 transition-colors"
                 >
                   Umroh Private
@@ -76,15 +76,15 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#"
-                  className="text-gray-300 hover:text-yellow-500 transition-colors"
+                  href="/umrah/regular"
+                  className="text-gray-300 hover:text-yellow-50 transition-colors"
                 >
                   Umroh Reguler
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/umrah/tahapan"
                   className="text-gray-300 hover:text-yellow-500 transition-colors"
                 >
                   Umroh Tahapan
@@ -96,6 +96,14 @@ const Footer = () => {
                   className="text-gray-300 hover:text-yellow-500 transition-colors"
                 >
                   Haji
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="text-gray-300 hover:text-yellow-500 transition-colors"
+                >
+                  Artikel &amp; Wawasan
                 </Link>
               </li>
             </ul>

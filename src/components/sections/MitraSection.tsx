@@ -52,8 +52,8 @@ const MitraSection = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.button
-              className="text-black px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold mx-auto block cursor-pointer"
+            <motion.a
+              className="text-black px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold mx-auto block cursor-pointer w-fit"
               style={{ backgroundColor: "rgb(234 179 8)" }} // yellow-500 equivalent
               whileHover={{
                 backgroundColor: "rgb(250 204 21)", // yellow-40
@@ -62,9 +62,11 @@ const MitraSection = () => {
               }}
               transition={{ duration: 0.2, ease: "easeOut" }}
               whileTap={{ scale: 0.95 }}
+              href="https://forms.gle/8J5m4r6f5c7u3k9F9"
+              target="_blank"
             >
               Bergabung Sebagai Mitra
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </section>

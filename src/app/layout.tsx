@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { El_Messiri } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
+
 import Footer from "@/components/layout/Footer";
 
 const elMessiri = El_Messiri({
@@ -98,8 +98,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#025a4e" />
       </head>
-      <body className={` ${elMessiri.variable}  antialiased `}>
-        <Navbar />
+      <body className={` ${elMessiri.variable} antialiased `}>
         <main>{children}</main>
         <Footer />
       </body>

@@ -1,38 +1,25 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
-// Navbar Component
-const Navbar = () => {
+// Navbar Component for non-main pages
+const NonMainPageNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const navItems = [
-    { name: "Beranda", href: "#home" },
-    { name: "Paket", href: "#packages" },
-    { name: "Keunggulan", href: "#keunggulan" },
+    { name: "Beranda", href: "/" },
+    { name: "Paket", href: "/#packages" },
+    { name: "Keunggulan", href: "/#keunggulan" },
     { name: "Artikel", href: "/blog" },
-    { name: "Kontak", href: "#cabang" },
+    { name: "Kontak", href: "/#cabang" },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-black/80 backdrop-blur-md shadow-lg"
-          : "bg-transparent backdrop-blur-xs"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black  shadow-lg`}
     >
       <div className="container mx-auto px-4 lg:py-px sm:px-6 lg:px-8 ">
         <div className="flex justify-between items-center h-16">
@@ -141,4 +128,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NonMainPageNavbar;
