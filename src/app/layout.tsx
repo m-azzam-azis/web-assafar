@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { El_Messiri } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 import Footer from "@/components/layout/Footer";
 
@@ -100,6 +101,7 @@ export default function RootLayout({
       </head>
       <body className={` ${elMessiri.variable} antialiased `}>
         <main>{children}</main>
+        <Analytics />
         <Footer />
       </body>
     </html>
