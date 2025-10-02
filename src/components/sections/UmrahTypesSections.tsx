@@ -2,23 +2,30 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { staggerContainer, staggerItem } from "@/lib/animations";
+import { ArrowUpRight } from "lucide-react";
 // Umrah Types Section Component
 const UmrahTypesSection = () => {
   const types = [
-    {
-      title: "Umroh Private",
-      subtitle: "Untuk kenyamanan Anda",
-      image: "/umroh-types/umroh-private.avif",
-    },
     {
       title: "Umroh Reguler",
       subtitle: "Cocok untuk semua golongan",
       image: "/umroh-types/umroh-reguler.avif",
     },
     {
+      title: "Umroh Private",
+      subtitle: "Untuk kenyamanan Anda",
+      image: "/umroh-types/umroh-private.avif",
+    },
+
+    {
       title: "Umroh Tahapan",
       subtitle: "Lebih murah seiring waktu",
       image: "/umroh-types/umroh-tahapan.avif",
+    },
+    {
+      title: "Paket Wisata Halal",
+      subtitle: "Jelajahi dunia dengan tenang",
+      image: "/umroh-types/paket-wisata.avif",
     },
   ];
 
@@ -36,14 +43,14 @@ const UmrahTypesSection = () => {
             className="text-4xl md:text-5xl font-bold text-black mb-6"
             variants={staggerItem}
           >
-            Pilihan Paket Umroh
+            Pilihan Paket Travel
           </motion.h2>
           <motion.p className="text-xl text-gray-60" variants={staggerItem}>
             Temukan paket yang sesuai dengan kebutuhan dan budget Anda
           </motion.p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 xl:grid-cols-2 gap-8">
           {types.map((type, index) => (
             <motion.div
               key={index}
@@ -62,17 +69,20 @@ const UmrahTypesSection = () => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80  to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-8">
-                <div className=" rounded-xl p-6 text-white">
-                  <motion.h3
-                    className="text-2xl font-bold mb-2"
-                    variants={staggerItem}
-                  >
-                    {type.title}
-                  </motion.h3>
-                  <motion.p className="text-white/90" variants={staggerItem}>
-                    {type.subtitle}
-                  </motion.p>
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <div className="flex items-center justify-between rounded-xl p-6 text-white">
+                  <div>
+                    <motion.h3
+                      className="text-2xl font-bold mb-2"
+                      variants={staggerItem}
+                    >
+                      {type.title}
+                    </motion.h3>
+                    <motion.p className="text-white/90" variants={staggerItem}>
+                      {type.subtitle}
+                    </motion.p>
+                  </div>
+                  <ArrowUpRight className="size-10 text-white flex-shrink-0" />
                 </div>
               </div>
             </motion.div>

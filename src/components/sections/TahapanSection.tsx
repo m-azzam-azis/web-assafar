@@ -32,12 +32,12 @@ const TahapanUmrohSection = () => {
             className="text-base lg:text-lg text-gray-700 leading-relaxed mb-8 space-y-2"
             variants={staggerItem}
           >
-            <h3 className="font-sans font-semibold">
+            <h3 className="font-sans font-semibold font-lg">
               {" "}
               Yuk, gabung dengan program tahapan umroh! Bisa umroh mulai dari{" "}
               <strong>14 JT*</strong> an aja.
             </h3>
-            <p>
+            <p className="text-sm">
               Tahapan umroh adalah program tabungan yang dibuat dengan pola
               sistem referensi. Dan ada reward atau ujroh untuk calon jamaah
               yang mengikuti program tahapan umroh sebesar
@@ -52,7 +52,7 @@ const TahapanUmrohSection = () => {
             whileHover={{ backgroundColor: "#1f2937", scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Hubungi Kami <ArrowRight className="inline ml-2 w-5 h-5" />
+            Selengkapnya <ArrowRight className="inline ml-2 w-5 h-5" />
           </motion.button>
 
           <motion.p

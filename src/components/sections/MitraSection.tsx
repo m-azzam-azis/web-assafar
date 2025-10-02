@@ -35,7 +35,7 @@ const MitraSection = () => {
               Kesempatan Menjadi Mitra Assafar
             </motion.h2>
             <motion.div className="max-w-4xl mx-auto" variants={staggerItem}>
-              <p className="text-xl text-white leading-relaxed">
+              <p className="lg:text-lg text-white leading-relaxed">
                 Kami membuka kesempatan untuk keagenan secara individu atau bagi
                 Anda yang ingin menjadi mitra di daerah. Dengan dukungan penuh
                 dari tim kami, Anda dapat menawarkan layanan Umrah dan

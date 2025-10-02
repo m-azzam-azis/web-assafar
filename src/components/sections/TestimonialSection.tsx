@@ -141,7 +141,7 @@ const TestimonialSection = () => {
                 >
                   <Card className="bg-gray-900 h-full flex flex-col ">
                     <CardContent className="flex flex-col items-center p-6 text-start flex-grow">
-                      <div className="text-gray-200 mb-4 italic line-clamp-6">
+                      <div className="text-gray-200 mb-4 italic line-clamp-10">
                         &ldquo;{testimonial.quote}&rdquo;
                       </div>
                       <div className="text-white mt-auto flex gap-4 items-start justify-start w-full">

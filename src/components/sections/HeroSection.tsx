@@ -90,7 +90,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black/40" />
 
       <div className="relative h-full flex items-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-3/4 flex justify-center items">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-3/4 ">
           <motion.div
             className="lg:max-w-2/3 space-y-8 flex flex-col h-full justify-center"
             // Remove container variants - let content render immediately
