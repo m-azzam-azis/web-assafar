@@ -33,16 +33,16 @@ const Navbar = () => {
           : "bg-transparent backdrop-blur-sm"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 py-2 sm:px-6 lg:px-8 ">
+      <div className="container mx-auto px-4 lg:py-px sm:px-6 lg:px-8 ">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <div className="flex items-center">
               <Image
                 src="/logo-putih.png"
                 alt="Logo"
-                width={120}
+                width={80}
                 height={40}
-                className="object-contain"
+                className="object-contain lg:w-25"
               />
             </div>
           </div>
@@ -54,7 +54,7 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`px-3 py-2 text-sm font-medium transition-colors hover:text-yellow-500 text-white`}
+                  className={`px-3 py-2 text-xs lg:text-sm font-medium transition-colors hover:text-yellow-500 text-white`}
                 >
                   {item.name}
                 </Link>

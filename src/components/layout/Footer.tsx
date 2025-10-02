@@ -14,7 +14,7 @@ const Footer = () => {
       id="contact"
       className="bg-black text-white py-16 md:rounded-t-3xl xl:rounded-t-[4rem]"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <Image

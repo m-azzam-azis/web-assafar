@@ -8,23 +8,23 @@ const UmrahTypesSection = () => {
     {
       title: "Umroh Private",
       subtitle: "Untuk kenyamanan Anda",
-      image: "/umroh-types/private.jpg",
+      image: "/umroh-types/umroh-private.avif",
     },
     {
       title: "Umroh Reguler",
       subtitle: "Cocok untuk semua golongan",
-      image: "/umroh-types/reguler.jpg",
+      image: "/umroh-types/umroh-reguler.avif",
     },
     {
       title: "Umroh Tahapan",
       subtitle: "Lebih murah seiring waktu",
-      image: "/umroh-types/tahapan.jpg",
+      image: "/umroh-types/umroh-tahapan.avif",
     },
   ];
 
   return (
     <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
           variants={staggerContainer}
@@ -61,9 +61,9 @@ const UmrahTypesSection = () => {
                 alt={type.title}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80  to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8">
-                <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 text-white">
+                <div className=" rounded-xl p-6 text-white">
                   <motion.h3
                     className="text-2xl font-bold mb-2"
                     variants={staggerItem}

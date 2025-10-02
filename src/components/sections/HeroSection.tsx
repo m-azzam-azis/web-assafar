@@ -24,10 +24,10 @@ const useIsMobile = () => {
 const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
-    "/assets/hero-1.jpg",
-    "/assets/hero-2.jpg",
-    "/assets/hero-3.jpg",
-    "/assets/hero-4.jpg",
+    "/assets/hero-1.avif",
+    "/assets/hero-2.avif",
+    "/assets/hero-3.avif",
+    "/assets/hero-4.avif",
   ];
 
   const isMobile = useIsMobile();
@@ -89,7 +89,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black/40" />
 
       <div className="relative h-full flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-3/4 flex justify-center items">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-3/4 flex justify-center items">
           <motion.div
             className="lg:max-w-2/3 space-y-8 flex flex-col h-full justify-center"
             // Remove container variants - let content render immediately
@@ -109,7 +109,7 @@ const HeroSection = () => {
               className="bg-gray-50 text-black px-6 md:px-8 py-3 rounded-full text shadow-lg cursor-pointer flex items-center gap-2 w-fit text-sm md:text-base relative"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.4 }}
+              transition={{ duration: 0.4 }}
               whileHover={{ scale: 1.05 }}
               href="#packages"
             >

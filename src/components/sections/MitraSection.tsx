@@ -12,7 +12,7 @@ const MitraSection = () => {
       <section className="py-20 relative">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1564769662533-4f00a87b4056?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            src="/assets/partnership-bg.avif"
             alt="Partnership"
             className="w-full h-full object-cover"
             fill
@@ -20,7 +20,7 @@ const MitraSection = () => {
           <div className="absolute inset-0 bg-black/70" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <motion.div
             className="text-center mb-16"
             variants={staggerContainer}
@@ -46,7 +46,7 @@ const MitraSection = () => {
           </motion.div>
 
           <motion.div
-            className="mb-20"
+            className=""
             variants={staggerItem}
             initial="hidden"
             whileInView="visible"
@@ -69,7 +69,7 @@ const MitraSection = () => {
         </div>
       </section>
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-12"
             variants={staggerContainer}

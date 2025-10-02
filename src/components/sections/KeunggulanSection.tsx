@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Users, CheckCircle, Heart, Shield, Award, Star } from "lucide-react";
+import { Users, CheckCircle, Shield, Award, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { staggerContainer, staggerItem } from "@/lib/animations";
@@ -8,28 +8,10 @@ import { staggerContainer, staggerItem } from "@/lib/animations";
 const KeunggulanSection = () => {
   const keunggulan = [
     {
-      title: "Sunnah",
-      description:
-        "Kami memastikan bahwa seluruh perjalanan sesuai dengan Sunnah Rasulullah Shalallahu 'Alaihi Wassalam, sehingga ibadah Anda mengikuti contoh terbaik.",
-      icon: <CheckCircle className="w-6 h-6" />,
-    },
-    {
-      title: "Muthowif Berpengalaman",
-      description:
-        "Setiap kelompok jamaah didampingi oleh Muthowif berpengalaman yang memberikan bimbingan dan pengetahuan tentang tempat-tempat suci.",
-      icon: <Users className="w-6 h-6" />,
-    },
-    {
       title: "Sesuai Sunnah Nabi",
       description:
         "Kami memastikan bahwa seluruh perjalanan sesuai dengan Sunnah Rasulullah Shalallahu 'Alaihi Wassalam, sehingga ibadah Anda mengikuti contoh terbaik.",
       icon: <CheckCircle className="w-6 h-6" />,
-    },
-    {
-      title: "Harga yang Bersahabat",
-      description:
-        "Kami menawarkan paket perjalanan Umroh Haji dengan harga yang terjangkau agar semua orang dapat merasakannya.",
-      icon: <Heart className="w-6 h-6" />,
     },
     {
       title: "Amanat dan Tanggung Jawab",
@@ -44,6 +26,12 @@ const KeunggulanSection = () => {
       icon: <Award className="w-6 h-6" />,
     },
     {
+      title: "Muthowif Berpengalaman",
+      description:
+        "Setiap kelompok jamaah didampingi oleh Muthowif berpengalaman yang memberikan bimbingan dan pengetahuan tentang tempat-tempat suci.",
+      icon: <Users className="w-6 h-6" />,
+    },
+    {
       title: "Dukungan Spiritual",
       description:
         "Kami menyediakan sesi bimbingan dan tanya jawab selama perjalanan untuk memberikan ilmu syari dari Muthowif yang berpengalaman.",
@@ -53,7 +41,7 @@ const KeunggulanSection = () => {
 
   return (
     <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8 container">
         <motion.div
           className="text-center mb-16"
           variants={staggerContainer}
