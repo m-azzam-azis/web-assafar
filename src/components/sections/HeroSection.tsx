@@ -46,7 +46,8 @@ const HeroSection = () => {
       {isMobile ? (
         // Single static image for mobile
         <Image
-          src={images[0]} // Use first image as static image
+          // src={"/assets/keunggulan.avif"}
+          src={images[1]}
           alt="Hero background"
           fill
           className="object-cover"
