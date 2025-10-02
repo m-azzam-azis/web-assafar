@@ -90,29 +90,32 @@ const TestimonialSection = () => {
   const [, setCurrentIndex] = useState(0);
 
   return (
-    <section className="py-20 bg-black">
+    <section className="py-12 sm:py-16 bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           <motion.h2
-            className="text-4xl md:text-5xl font-bold text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
             variants={staggerItem}
           >
             Testimoni Jamaah
           </motion.h2>
-          <motion.p className="text-xl text-gray-300" variants={staggerItem}>
+          <motion.p
+            className="text-lg sm:text-xl text-gray-300"
+            variants={staggerItem}
+          >
             Kepuasan jamaah adalah kebanggaan kami
           </motion.p>
         </motion.div>
 
         <div className="flex justify-center">
           <Carousel
-            className="w-full max-w-6xl"
+            className="w-full container"
             plugins={[
               Autoplay({
                 delay: 3000, // 2 seconds delay
@@ -137,26 +140,28 @@ const TestimonialSection = () => {
               {testimonials.map((testimonial) => (
                 <CarouselItem
                   key={testimonial.id}
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3"
+                  className="pl-2 md:pl-4 basis-10/12 sm:basis-1/2 lg:basis-1/3"
                 >
                   <Card className="bg-gray-900 h-full flex flex-col ">
-                    <CardContent className="flex flex-col items-center p-6 text-start flex-grow">
-                      <div className="text-gray-200 mb-4 italic line-clamp-10">
+                    <CardContent className="flex flex-col items-center p-4 sm:p-6 text-start flex-grow">
+                      <div className="text-gray-200 mb-4 italic line-clamp-8 sm:line-clamp-10 text-sm sm:text-base">
                         &ldquo;{testimonial.quote}&rdquo;
                       </div>
-                      <div className="text-white mt-auto flex gap-4 items-start justify-start w-full">
+                      <div className="text-white mt-auto flex gap-3 sm:gap-4 items-start justify-start w-full">
                         <div>
                           <Image
                             src={testimonial.image}
                             alt={testimonial.name}
-                            width={60}
-                            height={60}
+                            width={50}
+                            height={50}
                             className="rounded-full object-cover"
                           />
                         </div>
                         <div>
-                          <h3 className="font-semibold">{testimonial.name}</h3>
-                          <p className="text-gray-400 text-sm">
+                          <h3 className="font-semibold text-sm sm:text-base">
+                            {testimonial.name}
+                          </h3>
+                          <p className="text-gray-400 text-xs sm:text-sm">
                             {testimonial.title}
                           </p>
                         </div>

@@ -92,22 +92,22 @@ const HeroSection = () => {
       <div className="relative h-full flex items-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-3/4 ">
           <motion.div
-            className="lg:max-w-2/3 space-y-8 flex flex-col h-full justify-center"
+            className="lg:max-w-2/3 space-y-6 flex flex-col h-full justify-center"
             // Remove container variants - let content render immediately
           >
             {/* Remove motion.div wrapper, make it static */}
-            <div className="bg-white/10 backdrop-blur-md shadow-white/20 px-3 py-2 text-white w-fit rounded-full text-xs shadow ring ring-white/20">
+            <div className="bg-white/10 backdrop-blur-md shadow-white/20 px-3 py-2 text-white w-fit rounded-full text-xs sm:text-sm shadow ring ring-white/20">
               Feel the experinence
             </div>
 
             {/* Remove motion.h1 wrapper, make it static */}
-            <h1 className="text-[2.5rem] md:text-7xl font-extrabold text-white mb-6 leading-tight px-2">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-6 leading-tight px-2">
               Perjalanan Umroh dan Haji yang Tak Terlupakan!
             </h1>
 
             {/* Keep animation on button - it's below fold */}
             <motion.a
-              className="bg-gray-50 text-black px-6 md:px-8 py-3 rounded-full text shadow-lg cursor-pointer flex items-center gap-2 w-fit text-sm md:text-base relative"
+              className="bg-gray-50 text-black px-6 py-3 rounded-full text shadow-lg cursor-pointer flex items-center gap-2 w-fit text-sm sm:text-base relative"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}

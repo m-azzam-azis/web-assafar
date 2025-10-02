@@ -9,7 +9,7 @@ import BranchAccordion from "../BranchAccordion";
 const MitraSection = () => {
   return (
     <>
-      <section className="py-20 relative">
+      <section className="py-12 sm:py-16 relative">
         <div className="absolute inset-0">
           <Image
             src="/assets/partnership-bg.avif"
@@ -22,20 +22,20 @@ const MitraSection = () => {
 
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-12"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
             <motion.h2
-              className="text-4xl md:text-5xl font-bold text-white mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
               variants={staggerItem}
             >
               Kesempatan Menjadi Mitra Assafar
             </motion.h2>
             <motion.div className="max-w-4xl mx-auto" variants={staggerItem}>
-              <p className="lg:text-lg text-white leading-relaxed">
+              <p className="text-base sm:text-lg text-white leading-relaxed">
                 Kami membuka kesempatan untuk keagenan secara individu atau bagi
                 Anda yang ingin menjadi mitra di daerah. Dengan dukungan penuh
                 dari tim kami, Anda dapat menawarkan layanan Umrah dan
@@ -53,10 +53,10 @@ const MitraSection = () => {
             viewport={{ once: true }}
           >
             <motion.button
-              className="text-black px-8 py-4 rounded-full text-lg font-semibold mx-auto block cursor-pointer"
+              className="text-black px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold mx-auto block cursor-pointer"
               style={{ backgroundColor: "rgb(234 179 8)" }} // yellow-500 equivalent
               whileHover={{
-                backgroundColor: "rgb(250 204 21)", // yellow-400
+                backgroundColor: "rgb(250 204 21)", // yellow-40
                 scale: 1.05,
                 transition: { duration: 0.2, ease: "easeOut" },
               }}
@@ -68,17 +68,17 @@ const MitraSection = () => {
           </motion.div>
         </div>
       </section>
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 bg-white" id="cabang">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
             <motion.h3
-              className="text-3xl font-bold text-gray-900 mb-8"
+              className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6"
               variants={staggerItem}
             >
               Kantor Cabang

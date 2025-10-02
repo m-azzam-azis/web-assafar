@@ -40,26 +40,26 @@ const KeunggulanSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 sm:py-16 bg-gray-50" id="keunggulan">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8 container">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           <motion.h2
-            className="text-4xl md:text-5xl font-bold text-black mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4"
             variants={staggerItem}
           >
             Keunggulan Kami
           </motion.h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
           <motion.div
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -68,22 +68,24 @@ const KeunggulanSection = () => {
             {keunggulan.map((item, index) => (
               <motion.div
                 key={index}
-                className="p-4 bg-white rounded-xl shadow-md"
+                className="p-3 sm:p-4 bg-white rounded-xl shadow-md"
                 variants={staggerItem}
                 whileHover={{
                   boxShadow:
                     "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
                 }}
               >
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600 mt-1">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600 mt-1">
                     {item.icon}
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800">
+                    <h3 className="text-base md:text-lg font-semibold text-gray-800">
                       {item.title}
                     </h3>
-                    <p className="text-gray-600 mt-1">{item.description}</p>
+                    <p className="text-xs md:text-sm text-gray-600 mt-1">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -95,7 +97,7 @@ const KeunggulanSection = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex justify-center"
+            className="flex justify-center mt-6 md:mt-0"
           >
             <Image
               src="/assets/keunggulan.avif"

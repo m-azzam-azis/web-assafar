@@ -17,7 +17,6 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion"],
   },
-  optimizeFonts: true,
 };
 
 export default nextConfig;

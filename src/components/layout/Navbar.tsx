@@ -20,9 +20,9 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Beranda", href: "#home" },
-    { name: "Tentang", href: "#about" },
     { name: "Paket", href: "#packages" },
-    { name: "Kontak", href: "#contact" },
+    { name: "Keunggulan", href: "#keunggulan" },
+    { name: "Kontak", href: "#cabang" },
   ];
 
   return (
@@ -30,7 +30,7 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-black/80 backdrop-blur-md shadow-lg"
-          : "bg-transparent backdrop-blur-sm"
+          : "bg-transparent backdrop-blur-xs"
       }`}
     >
       <div className="container mx-auto px-4 lg:py-px sm:px-6 lg:px-8 ">

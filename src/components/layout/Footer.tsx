@@ -34,7 +34,7 @@ const Footer = () => {
                 href={`https://wa.me/${jakartaBranch?.phone?.replace("+", "")}`}
                 target="_blank"
                 aria-label="whatsapp"
-                className="w-10 h-10 bg-yellow-500 hover:bg-yellow-400 rounded-full flex items-center justify-center"
+                className="w-10 h-10 bg-yellow-500 hover:bg-yellow-400 transition-colors duration-300 rounded-full flex items-center justify-center"
               >
                 <FaWhatsapp className="w-5 h-5 text-black" />
               </Link>
@@ -45,7 +45,7 @@ const Footer = () => {
                 )}`}
                 target="_blank"
                 aria-label="instagram"
-                className="w-10 h-10 bg-yellow-500 hover:bg-yellow-400 rounded-full flex items-center justify-center"
+                className="w-10 h-10 bg-yellow-500 hover:bg-yellow-400 transition-colors duration-300 rounded-full flex items-center justify-center"
               >
                 <Instagram className="w-5 h-5 text-black" />
               </Link>
@@ -56,7 +56,7 @@ const Footer = () => {
                 )}`}
                 target="_blank"
                 aria-label="tiktok"
-                className="w-10 h-10 bg-yellow-500 hover:bg-yellow-400 rounded-full flex items-center justify-center"
+                className="w-10 h-10 bg-yellow-500 hover:bg-yellow-400 transition-colors duration-300 rounded-full flex items-center justify-center"
               >
                 <FaTiktok className="size-4 text-black" />
               </Link>

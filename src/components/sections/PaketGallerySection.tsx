@@ -15,27 +15,30 @@ const PaketGallerySection = () => {
   ];
 
   return (
-    <section id="packages" className="py-20 bg-white">
+    <section id="packages" className="py-12 sm:py-16 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           <motion.h2
-            className="text-4xl md:text-5xl font-bold text-black mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4"
             variants={staggerItem}
           >
             Paket Umroh Kami
           </motion.h2>
-          <motion.p className="text-xl text-gray-600" variants={staggerItem}>
+          <motion.p
+            className="text-lg sm:text-xl text-gray-600"
+            variants={staggerItem}
+          >
             Lihat berbagai pilihan paket umroh yang tersedia
           </motion.p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {packages.map((img, index) => (
             <motion.div
               key={index}
@@ -60,10 +63,10 @@ const PaketGallerySection = () => {
             >
               <Image
                 src={img}
-                alt={`Paket ${index + 1}`}
+                alt={`Poster Paket ${index + 1}`}
                 width={600}
                 height={400}
-                className="w-full h-64 object-cover"
+                className="w-full h-48 sm:h-64 object-cover"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.src =
